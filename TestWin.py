@@ -1,3 +1,7 @@
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QWidget , QPushButton,QLabel, QVBoxLayout, QHBoxLayout, QMessageBox, QRadioButton,QButtonGroup,QLineEdit, QGroupBox, QListWidget
+from PyQt5.QtGui import QFont
+from instr import *
 class TestWin(QWidget):
     def init(self):
         super().init()
@@ -45,7 +49,6 @@ class TestWin(QWidget):
         self.v_line.addWidget(self.test3_result, alignment = Qt.AlignLeft)
         self.v_line.addWidget(self.sendresults, alignment = Qt.AlignCenter)
         self.v2_line.addWidget(self.timer, alignment = Qt.AlignRight)
-
         self.hor_line.addLayout(self.v_line)
         self.hor_line.addLayout(self.v2_line)
         self.setLayout(self.hor_line)
@@ -54,4 +57,6 @@ class TestWin(QWidget):
         self.hide()
     def connects(self): 
         self.sendresults.clicked.connect(self.next_click)
+app = QApplication([])
 tw = TestWin()
+app.exec_()
