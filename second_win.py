@@ -2,9 +2,10 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget , QPushButton,QLabel, QVBoxLayout, QHBoxLayout, QMessageBox, QRadioButton,QButtonGroup,QLineEdit, QGroupBox, QListWidget
 from PyQt5.QtGui import QFont
 from instr import *
+from final_win import *
 class TestWin(QWidget):
-    def init(self):
-        super().init()
+    def __init__(self):
+        super().__init__()
         self.set_appear()
         self.initUI()
         self.connects()
@@ -57,4 +58,3 @@ class TestWin(QWidget):
         self.hide()
     def connects(self): 
         self.sendresults.clicked.connect(self.next_click)
-tw = TestWin()
