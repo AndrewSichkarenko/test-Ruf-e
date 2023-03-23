@@ -57,6 +57,4 @@ class TestWin(QWidget):
         self.hide()
     def connects(self): 
         self.sendresults.clicked.connect(self.next_click)
-app = QApplication([])
 tw = TestWin()
-app.exec_()
