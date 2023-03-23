@@ -8,7 +8,6 @@ class FinalWin(QWidget):
         super().__init__()
         self.set_appear()
         self.initUI()
-        self.connects()
         self.show()
     def set_appear(self): 
         self.setWindowTitle(txt_title3)
@@ -21,5 +20,3 @@ class FinalWin(QWidget):
        self.v_line.addWidget(self.score_text, alingment= Qt.AlignCenter)
        self.v_line.addWidget(self.bye_text, alingment= Qt.AlignCenter)
        self.setLayout(self.v_line)
-app = QApplication([])
-app.exec_()
