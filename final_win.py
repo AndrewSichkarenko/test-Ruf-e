@@ -17,6 +17,6 @@ class FinalWin(QWidget):
        self.v_line = QVBoxLayout()
        self.score_text = QLabel(score_text)
        self.bye_text = QLabel(bye_text)
-       self.v_line.addWidget(self.score_text, alingment= Qt.AlignCenter)
-       self.v_line.addWidget(self.bye_text, alingment= Qt.AlignCenter)
+       self.v_line.addWidget(self.score_text, alignment= Qt.AlignCenter)
+       self.v_line.addWidget(self.bye_text, alignment= Qt.AlignCenter)
        self.setLayout(self.v_line)
