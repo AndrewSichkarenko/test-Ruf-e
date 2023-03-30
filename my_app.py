@@ -1,7 +1,7 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget , QPushButton,QLabel, QVBoxLayout, QHBoxLayout, QMessageBox, QRadioButton,QButtonGroup,QLineEdit, QGroupBox, QListWidget
 from PyQt5.QtGui import QFont
-from corry import *
+from instr import *
 from second_win import *
 
 class MainWin(QWidget):
@@ -17,7 +17,9 @@ class MainWin(QWidget):
         self.move(win_x, win_y)
     def initUI(self): 
         self.hello_text = QLabel(txt_hello)
+        self.hello_text.setObjectName("hello")
         self.instruction = QLabel(txt_instruction)
+        self.instruction.setObjectName("instruction")
         self.btn_next = QPushButton(txt_next, self)
         self.layout_line = QVBoxLayout()
         self.layout_line.addWidget(self.hello_text, alignment = Qt.AlignCenter)
@@ -31,4 +33,28 @@ class MainWin(QWidget):
         self.btn_next.clicked.connect(self.next_click)
 app = QApplication([])
 mw = MainWin()
+style = '''
+    QWidget{
+        background-color:#FFEBCD;
+            font-size: 20px;
+    }
+    QLabel#instruction {
+        width: 600px;
+        text-align: center;
+    }
+    QLabel#hello {
+        font-size: 30px
+    }
+    QPushButton {
+        border: 2px solid black;
+        border-radius: 4px;
+        background: white;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right : 10px;
+        padding-left : 10px;
+        font-weight: 500;
+    }
+'''
+app.setStyleSheet(style)
 app.exec_()
