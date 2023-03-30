@@ -77,3 +77,4 @@ class FinalWin(QWidget):
                 print(txt_workheart + txt_res4)
             else:
                 print(txt_workheart+ txt_res5)
+    
